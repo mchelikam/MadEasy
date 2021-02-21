@@ -7,37 +7,50 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
-<body>
+
+<body class="p-3 mb-2 bg-dark text-white">
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-dark border-bottom btn-block mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">MadEasy</a>
+                <a class="navbar-brand text-white-50" asp-area="" asp-page="/Index">MadEasy</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
+                            <a class="nav-link text-white" asp-area="" asp-page="/Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
+                            <a class="nav-link text-white" asp-area="" asp-page="/AboutUs">AboutUs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" asp-area="" asp-page="/Help">Help</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
-    <div class="container">
+
+    <div class="container" style="padding-bottom: 200px">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
-
     <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2021 - MadEasy - <a asp-area="" asp-page="/Privacy">Privacy</a>
+        <div class="container" style="color:white">
+            &copy; 2021 - MadEasy Realtors Pvt Limited
+            <address>
+                222 Senator Place,
+                Apartment 56
+                Cincinnati,
+                Ohio,USA
+                PO : 45220
+                Phone : (513) 836-2917
+            </address>
         </div>
     </footer>
 

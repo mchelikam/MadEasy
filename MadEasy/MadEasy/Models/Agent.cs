@@ -13,12 +13,12 @@ namespace MadEasy.Models
 
         [Display(Name = "First Name")]
         [Required(ErrorMessage = "First Name is required.")]
-        [StringLength(20, MinimumLength = 3, ErrorMessage = "First Name should be minimum of 3 characters")]
+        [StringLength(20, MinimumLength = 3, ErrorMessage = "First Name should be a minimum of 3 characters")]
         public string FirstName { get; set; }
 
         [Display(Name = "Last Name")]
         [Required(ErrorMessage = "Last Name is required.")]
-        [StringLength(20, MinimumLength = 3, ErrorMessage = "Last Name should be minimum of 3 characters")]
+        [StringLength(20, MinimumLength = 3, ErrorMessage = "Last Name should be a minimum of 3 characters")]
         public string LastName { get; set; }
 
         [Display(Name = "Phone Number")]
