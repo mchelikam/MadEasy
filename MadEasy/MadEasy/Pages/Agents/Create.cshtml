@@ -1,0 +1,53 @@
+﻿@page
+@model MadEasy.Pages.Agents.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Agent</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Agent.FirstName" class="control-label"></label>
+                <input asp-for="Agent.FirstName" class="form-control" />
+                <span asp-validation-for="Agent.FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Agent.LastName" class="control-label"></label>
+                <input asp-for="Agent.LastName" class="form-control" />
+                <span asp-validation-for="Agent.LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Agent.PhoneNumber" class="control-label"></label>
+                <input asp-for="Agent.PhoneNumber" class="form-control" />
+                <span asp-validation-for="Agent.PhoneNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Agent.Email" class="control-label"></label>
+                <input asp-for="Agent.Email" class="form-control" />
+                <span asp-validation-for="Agent.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Agent.SalesOfficeId" class="control-label"></label>
+                <select asp-for="Agent.SalesOfficeId" class ="form-control" asp-items="ViewBag.SalesOfficeId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

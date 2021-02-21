@@ -1,0 +1,53 @@
+﻿@page
+@model MadEasy.Pages.SalesOffices.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>SalesOffice</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="SalesOffice.Name" class="control-label"></label>
+                <input asp-for="SalesOffice.Name" class="form-control" />
+                <span asp-validation-for="SalesOffice.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SalesOffice.CityId" class="control-label"></label>
+                <select asp-for="SalesOffice.CityId" class ="form-control" asp-items="ViewBag.CityId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="SalesOffice.Address" class="control-label"></label>
+                <input asp-for="SalesOffice.Address" class="form-control" />
+                <span asp-validation-for="SalesOffice.Address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SalesOffice.PhoneNumber" class="control-label"></label>
+                <input asp-for="SalesOffice.PhoneNumber" class="form-control" />
+                <span asp-validation-for="SalesOffice.PhoneNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SalesOffice.Email" class="control-label"></label>
+                <input asp-for="SalesOffice.Email" class="form-control" />
+                <span asp-validation-for="SalesOffice.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
