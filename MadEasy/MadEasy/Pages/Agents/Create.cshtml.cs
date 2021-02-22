@@ -21,7 +21,7 @@ namespace MadEasy.Pages.Agents
 
         public IActionResult OnGet()
         {
-        ViewData["SalesOfficeId"] = new SelectList(_context.Set<SalesOffice>(), "Id", "Id");
+        ViewData["SalesOfficeId"] = new SelectList(_context.Set<SalesOffice>(), "Id", "Name");
             return Page();
         }
 

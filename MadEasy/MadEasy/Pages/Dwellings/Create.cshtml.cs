@@ -21,9 +21,9 @@ namespace MadEasy.Pages.Dwellings
 
         public IActionResult OnGet()
         {
-        ViewData["AgentId"] = new SelectList(_context.Agent, "Id", "Id");
-        ViewData["CityId"] = new SelectList(_context.City, "Id", "Id");
-        ViewData["SalesOfficeId"] = new SelectList(_context.Set<SalesOffice>(), "Id", "Id");
+        ViewData["AgentId"] = new SelectList(_context.Agent, "Id", "Name");
+        ViewData["CityId"] = new SelectList(_context.City, "Id", "Name");
+        ViewData["SalesOfficeId"] = new SelectList(_context.Set<SalesOffice>(), "Id", "Name");
             return Page();
         }
 

@@ -2,13 +2,12 @@
 @model MadEasy.Pages.SalesOffices.DetailsModel
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Details-SalesOffice";
 }
 
-<h1>Details</h1>
+<h1>Sales Office Details</h1>
 
 <div>
-    <h4>SalesOffice</h4>
     <hr />
     <dl class="row">
         <dt class="col-sm-2">
@@ -21,7 +20,7 @@
             @Html.DisplayNameFor(model => model.SalesOffice.City)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.SalesOffice.City.Id)
+            @Html.DisplayFor(model => model.SalesOffice.City.Name)
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.SalesOffice.Address)

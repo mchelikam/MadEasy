@@ -37,7 +37,7 @@ namespace MadEasy.Pages.Agents
             {
                 return NotFound();
             }
-           ViewData["SalesOfficeId"] = new SelectList(_context.Set<SalesOffice>(), "Id", "Id");
+           ViewData["SalesOfficeId"] = new SelectList(_context.Set<SalesOffice>(), "Id", "Name");
             return Page();
         }
 
