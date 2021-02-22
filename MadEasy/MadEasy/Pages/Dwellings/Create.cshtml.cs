@@ -38,6 +38,33 @@ namespace MadEasy.Pages.Dwellings
             {
                 return Page();
             }
+            //Validation for Date of Listing to be not a future date
+            var ListYear = Dwelling.DateOfListing.Year;
+            var AllowedYear = DateTime.Now.Year;
+            if (AllowedYear < ListYear)
+            {
+                ModelState.AddModelError("Dwelling.DateOfListing", "Date Of Listing cannot be a future year");
+            }
+            //Validation for Date of Listing to be not a past date
+
+            if (AllowedYear > ListYear)
+            {
+                ModelState.AddModelError("Dwelling.DateOfListing", "Date Of Listing cannot be a past year");
+            }
+
+            //Validation for Listed Price to not be less than $1000
+
+            decimal Price = Dwelling.ExpectedPrice.Value;
+
+            if (Price < 1000)
+            {
+                ModelState.AddModelError("Dwelling.ExpectedPrice", "Price of Listed Property cannot be less than $1000");
+            }
+
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
 
             _context.Dwelling.Add(Dwelling);
             await _context.SaveChangesAsync();
