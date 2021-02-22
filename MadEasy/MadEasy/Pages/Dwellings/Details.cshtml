@@ -26,7 +26,7 @@
             @Html.DisplayNameFor(model => model.Dwelling.Agent)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Dwelling.Agent.LastName)
+            @Html.DisplayFor(model => model.Dwelling.Agent.FullName)
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Dwelling.City)
@@ -69,6 +69,12 @@
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Dwelling.Note)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Dwelling.Old)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Dwelling.Old)
         </dd>
     </dl>
 </div>

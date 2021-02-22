@@ -19,12 +19,12 @@
             </div>
             <div class="form-group">
                 <label asp-for="Dwelling.Address" class="control-label"></label>
-                <input asp-for="Dwelling.Address" class="form-control" />
+                <textarea asp-for="Dwelling.Address" class="form-control"></textarea>
                 <span asp-validation-for="Dwelling.Address" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Dwelling.AgentId" class="control-label"></label>
-                <select asp-for="Dwelling.AgentId" class ="form-control" asp-items="ViewBag.AgentId"></select>
+                <select asp-for="Dwelling.AgentId" class="form-control" asp-items="ViewBag.AgentId"></select>
             </div>
             <div class="form-group">
                 <label asp-for="Dwelling.CityId" class="control-label"></label>
@@ -56,7 +56,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="Dwelling.Note" class="control-label"></label>
-                <input asp-for="Dwelling.Note" class="form-control" />
+                <textarea asp-for="Dwelling.Note" class="form-control"></textarea>
                 <span asp-validation-for="Dwelling.Note" class="text-danger"></span>
             </div>
             <div class="form-group">

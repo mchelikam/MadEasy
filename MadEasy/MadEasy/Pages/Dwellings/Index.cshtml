@@ -31,18 +31,11 @@
             <th>
                 @Html.DisplayNameFor(model => model.Dwelling[0].Type)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Dwelling[0].ExpectedPrice)
-            </th>
+       
             <th>
                 @Html.DisplayNameFor(model => model.Dwelling[0].Available)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Dwelling[0].DateOfListing)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Dwelling[0].Note)
-            </th>
+
             <th></th>
         </tr>
     </thead>
@@ -56,7 +49,7 @@
                 @Html.DisplayFor(modelItem => item.Address)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Agent.LastName)
+                @Html.DisplayFor(modelItem => item.Agent.FullName)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.City.Name)
@@ -67,18 +60,19 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Type)
             </td>
+    
             <td>
-                @Html.DisplayFor(modelItem => item.ExpectedPrice)
+                
+                @if (item.Available)
+                {
+                    <span class="badge badge-warning">Available</span>
+                }
+                else
+                {
+                    <span class="badge badge-secondary">Not Available</span>
+                }
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Available)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DateOfListing)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Note)
-            </td>
+  
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
                 <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |

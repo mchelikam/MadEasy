@@ -21,6 +21,13 @@ namespace MadEasy.Models
         [StringLength(20, MinimumLength = 3, ErrorMessage = "Last Name should be minimum of 3 characters")]
         public string LastName { get; set; }
 
+        public string FullName
+        {
+            get
+            {      // CONCAT FIRST & LAST NAME
+                return $"{FirstName} {LastName}";
+            }
+        }
         [Display(Name = "Phone Number")]
         [Required(ErrorMessage = "Phone Number is required.")]
         [Phone]

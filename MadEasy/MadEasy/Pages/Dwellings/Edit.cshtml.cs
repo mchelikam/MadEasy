@@ -39,7 +39,7 @@ namespace MadEasy.Pages.Dwellings
             {
                 return NotFound();
             }
-           ViewData["AgentId"] = new SelectList(_context.Agent, "Id", "LastName");
+           ViewData["AgentId"] = new SelectList(_context.Agent, "Id", "FullName");
            ViewData["CityId"] = new SelectList(_context.City, "Id", "Name");
            ViewData["SalesOfficeId"] = new SelectList(_context.Set<SalesOffice>(), "Id", "Name");
             return Page();
