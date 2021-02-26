@@ -1,0 +1,46 @@
+﻿@page
+@model MadEasy.Pages.SignUpModel
+@{
+    ViewData["Title"] = "Sign Up";
+}
+<!DOCTYPE HTML>
+<html>
+<body>
+    <div id="ContactUs" class="text-center" style="padding:70px">
+        <h3 style="Color: yellow;text-align:center;font-size:150%">Sign Up</h3>
+        <div class="text-center">
+            <form method="post" style="Color: orange;">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Prospect.FirstName" class="control-label"></label>
+                    <input asp-for="Prospect.FirstName" class="form-control" />
+                    <span asp-validation-for="Prospect.FirstName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Prospect.LastName" class="control-label"></label>
+                    <input asp-for="Prospect.LastName" class="form-control" />
+                    <span asp-validation-for="Prospect.LastName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Prospect.PhoneNumber" class="control-label"></label>
+                    <input asp-for="Prospect.PhoneNumber" class="form-control" />
+                    <span asp-validation-for="Prospect.PhoneNumber" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Prospect.Email" class="control-label"></label>
+                    <input asp-for="Prospect.Email" class="form-control" />
+                    <span asp-validation-for="Prospect.Email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Prospect.Type" class="control-label"></label>
+                    <input asp-for="Prospect.Type" class="form-control" />
+                    <span asp-validation-for="Prospect.Type" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Submit" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

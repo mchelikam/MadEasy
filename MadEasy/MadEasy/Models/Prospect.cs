@@ -25,7 +25,7 @@ namespace MadEasy.Models
         {
             get
             {      // CONCAT FIRST & LAST NAME
-                return $"{FirstName} {LastName}";
+                return $"{FirstName}  {LastName}";
             }
         }
         [Display(Name = "Phone Number")]

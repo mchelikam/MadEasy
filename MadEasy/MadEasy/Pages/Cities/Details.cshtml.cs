@@ -28,7 +28,9 @@ namespace MadEasy.Pages.Cities
                 return NotFound();
             }
 
-            City = await _context.City.FirstOrDefaultAsync(m => m.Id == id);
+            City = await _context.City
+                .Include(x => x.SalesOffices)
+                .FirstOrDefaultAsync(m => m.Id == id);
 
             if (City == null)
             {

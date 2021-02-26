@@ -29,7 +29,10 @@ namespace MadEasy.Pages.SalesOffices
             }
 
             SalesOffice = await _context.SalesOffice
-                .Include(s => s.City).FirstOrDefaultAsync(m => m.Id == id);
+                .Include(s => s.City)
+                .Include(s => s.Agents)
+                .Include(s => s.Dwellings)
+                .FirstOrDefaultAsync(m => m.Id == id);
 
             if (SalesOffice == null)
             {

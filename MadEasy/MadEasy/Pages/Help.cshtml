@@ -1,16 +1,17 @@
 ﻿@page
 @model MadEasy.Pages.HelpModel
 @{
+    ViewData["Title"] = "Help Page";
 }
 <!DOCTYPE HTML>
 <html>
 <body>
     <div class="text-center" style="padding:30px">
-        <h4 style="Color:yellow;text-align:center;font-size=50%">
+        <h4 style="Color: yellow;text-align:center;font-size:150%">
             <img src="https://lh3.googleusercontent.com/9IEftXgyWfVC85aV22HA--0wHJJ9wvm6iS6V-Za9lZRc33Rvaxi4gQnmOlLOiYQgQala6I9f-cjmpcJYbie4hmuNgG-Ylw6GYy6SuFoUOJa28AsDQVRpPCNVCFCoAI5Jesj3Ty8F91kwvczMeIGmca4wA2hXLP_d-_C_0u1X29uOad_nkRctpfwOV1buLjZLM10F4UL3JV076cr5FY8ro0KABUwYdpUfFs1vgt0vthRp7nmxR8tGP9nlxuIF8azhonJMwQSMXuXCcVoNxMScnIAgbVKcNTg8fJVrb5Rc5T-2JRsGcbIQom0lwKFnroAemmd3Zawgq9cdM9txQmPieO5bCUyuaTt5-M8MJQWWjDy8oaJFM7jnktF8ooDIFtRboeJyJ7eOzeM_kqYa-s4RubvKpQ_GwBLOmHxuti9WObi7IeZOOiBhend4CmkAv5SWaP2J7IdYoKg_prLGOjFtBW77ET0ZADxkevUuD5WQl3QrmPYOuB98Y7juC0-1Nev6RD9O84S2Q6vE3yOr5OUlc8I5wVihpPmIqxe3fNdo5wJImNX0kb5W4Hs1QXSAPWNOcS7kDMA7UwvRiXKcd5mFsa1PvQmdtGg3bz92vx2YWukwWNA_naVICQ60qJ83RqQrgLevla7aT2T5ux5sl1ceZL_Dmv_jXs1-qsdzrlmR4yJbwHwcuVRm9y62DuOm=s512-no?authuser=0" width="50" height="50" alt="Logo MadEasy" class="center">
             <strong>Getting Started</strong>
         </h4>
-        <p style="Color:gold">Here are a few tips and guides on helping you getting started with the website!</p>
+        <p style="Color:orange">Here are a few tips and guides on helping you getting started with the website!</p>
         <br>
     </div>
     <div class="container">
@@ -18,11 +19,7 @@
             <div class="col" style="text-align: left">
                 <img src="https://i.ytimg.com/vi/JwBLbn64rS0/maxresdefault.jpg" id="rightImage" width="250" height="250" alt="Image" class="center" style="padding-bottom:40px;padding-right:30px;">
             </div>
-            <div class="col shadow-lg p-3 mb-5 bg-white rounded" style="color:black">
-                MadEasy is your one stop destination if you are ready to buy/move/sell house.You can signup with MadEasy and
-                we will  help you to get your dream house.On registration you will receive a call from our Sales Agent, who will gauge your requirements and help you in your endeavor in getting your dream house.
-                MadEasy specializes in providing end to end servies of the product.For more details please goto the HomePage where we have described the processes in detail.
-            </div>
+            <div class="col shadow-lg p-3 mb-5 bg-white rounded" style="color:black">MadEasy is your one stop destination if you are ready to buy/move/sell house.You can <a asp-page="/SignUp">Sign Up</a> with MadEasy and we will help you get to your dream house.On registration, you will receive a call from our Sales Agent within 2 days, who will gauge your requirements and shall help you in your endeavor of getting your dream house. We believe in Quality over Quantity! We provide customized solutions to our most valued customers.For more queries you can reach us out at our official <a href="mailto:vedulasn@mail.uc.edu">Email</a>.</div>
         </div>
     </div>
 </body>

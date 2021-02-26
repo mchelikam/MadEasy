@@ -18,6 +18,31 @@
         </dd>
     </dl>
 </div>
+
+<div>
+    <h2>Sales Offices</h2>
+    <table class=" table table-sm " style="color:white">
+        <thead>
+            <tr>
+                <th>Sales Office Name</th>
+                <th>Address</th>
+                <th>Details</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var city in Model.City.SalesOffices)
+            {
+                <tr>
+                    <td>@city.Name </td>
+                    <td>@city.Address</td>
+                    <td><a asp-page="/SalesOffices/Details" asp-route-id="@city.Id">Details</a></td>
+                </tr>
+
+            }
+        </tbody>
+    </table>
+</div>
+
 <div>
     <a asp-page="./Edit" asp-route-id="@Model.City.Id">Edit</a> |
     <a asp-page="./Index">Back to List</a>

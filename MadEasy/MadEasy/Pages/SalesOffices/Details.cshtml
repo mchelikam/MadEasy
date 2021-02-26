@@ -43,6 +43,56 @@
     </dl>
 </div>
 <div>
+    <h2>Agent Details</h2>
+    <table class=" table table-sm " style="color:white">
+        <thead>
+            <tr>
+                <th>Agent Name</th>
+                <th>Phone Number</th>
+                <th>Email</th>
+                <th>Details</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var salesoffice1 in Model.SalesOffice.Agents)
+            {
+                <tr>
+                    <td>@salesoffice1.FullName </td>
+                    <td>@salesoffice1.PhoneNumber</td>
+                    <td>@salesoffice1.Email</td>
+                    <td><a asp-page="/Agents/Details" asp-route-id="@salesoffice1.Id">Details</a></td>
+                </tr>
+
+            }
+        </tbody>
+    </table>
+</div>
+<div>
+    <h2>Dwelling Details</h2>
+    <table class=" table table-sm " style="color:white">
+        <thead>
+            <tr>
+                <th>Property Name</th>
+                <th>Property Address</th>
+                <th>Property Type</th>
+                <th>Details</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var salesoffice2 in Model.SalesOffice.Dwellings)
+            {
+                <tr>
+                    <td>@salesoffice2.PropertyName </td>
+                    <td>@salesoffice2.Address</td>
+                    <td>@salesoffice2.Type</td>
+                    <td><a asp-page="/Dwellings/Details" asp-route-id="@salesoffice2.Id">Details</a></td>
+                </tr>
+
+            }
+        </tbody>
+    </table>
+</div>
+<div>
     <a asp-page="./Edit" asp-route-id="@Model.SalesOffice.Id">Edit</a> |
     <a asp-page="./Index">Back to List</a>
 </div>

@@ -42,6 +42,31 @@
         </dd>
     </dl>
 </div>
+
+<div>
+    <h2>Dwellings</h2>
+    <table class=" table table-sm " style="color:white">
+        <thead>
+            <tr>
+                <th>Property Name</th>
+                <th>Property Address</th>
+                <th>Property Type</th>
+                <th>Details</th>
+            </tr>
+            </thead>
+        <tbody>
+        @foreach (var agent in Model.Agent.Dwellings)
+        { 
+            <tr>
+                <td>@agent.PropertyName </td>
+                <td>@agent.Address</td>
+                <td>@agent.Type</td>
+                <td><a asp-page="/Dwellings/Details" asp-route-id="@agent.Id">Details</a></td>
+            </tr>    
+            }
+            </tbody>
+        </table>
+    </div>
 <div>
     <a asp-page="./Edit" asp-route-id="@Model.Agent.Id">Edit</a> |
     <a asp-page="./Index">Back to List</a>

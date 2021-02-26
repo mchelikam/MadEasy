@@ -1,7 +1,7 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center" style="padding:30px">
@@ -69,9 +69,9 @@
         <div class="col">
             <ul style="color:gold; font:verdana;font-size:20px">
 
-                <li>Sign-Up with MadEasy</li>
-                <li>Choose from a list of Cities</li>
+                <li><a asp-page="/SignUp" style="color:darkturquoise">Sign-Up</a> with MadEasy</li>
                 <li>Connect with our Sales Agent</li>
+                <li>Get a detailed listing of our Services from our Sales Rockstars!</li>
             </ul>
         </div>
         <div class="col" style="text-align: left">
@@ -89,7 +89,7 @@
         </div>
         <div class="col">
             <ul style="color:gold;font:verdana;font-size:20px">
-                <li>Choose from a list of Houses to buy/rent</li>
+                <li>Choose from a list of Houses to buy/rent/sell</li>
                 <li> Sign House Agreement</li>
                 <li>Live in your Dream House!!</li>
             </ul>
