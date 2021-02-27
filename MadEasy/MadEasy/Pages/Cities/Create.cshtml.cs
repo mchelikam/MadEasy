@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using MadEasy.Data;
 using MadEasy.Models;
+using Microsoft.EntityFrameworkCore;
+
 
 namespace MadEasy.Pages.Cities
 {
@@ -31,6 +33,20 @@ namespace MadEasy.Pages.Cities
         // more details, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
         {
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
+
+            // City Name Validation
+            var n = City.Name;
+            bool nAlreadyExists = await _context.City.AnyAsync(x => x.Name == n);
+
+            if (nAlreadyExists)
+            {
+                ModelState.AddModelError("City.Name", "City Name already exists");
+            }
+
             if (!ModelState.IsValid)
             {
                 return Page();

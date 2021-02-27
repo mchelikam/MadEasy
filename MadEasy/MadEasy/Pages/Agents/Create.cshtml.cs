@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using MadEasy.Data;
 using MadEasy.Models;
+using Microsoft.EntityFrameworkCore;
+
 
 namespace MadEasy.Pages.Agents
 {
@@ -36,7 +38,22 @@ namespace MadEasy.Pages.Agents
             {
                 return Page();
             }
+            // REPOPULATE DROPDOWN IF VALIDATION ERROR OCCURS
+            ViewData["SalesOfficeId"] = new SelectList(_context.SalesOffice, "Id", "Name");
 
+            // Agent email validation
+            var e = Agent.Email;
+            bool eAlreadyExists = await _context.Agent.AnyAsync(x => x.Email == e);
+
+            if (eAlreadyExists)
+            {
+                ModelState.AddModelError("Agent.Email", "Email already exists");
+            }
+
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
             _context.Agent.Add(Agent);
             await _context.SaveChangesAsync();
 

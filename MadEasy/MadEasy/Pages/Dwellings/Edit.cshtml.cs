@@ -54,28 +54,55 @@ namespace MadEasy.Pages.Dwellings
                 return Page();
             }
 
+            // REPOPULATE DROPDOWN IF VALIDATION ERROR OCCURS
+            ViewData["AgentId"] = new SelectList(_context.Agent, "Id", "FullName");
+            ViewData["CityId"] = new SelectList(_context.City, "Id", "Name");
+            ViewData["SalesOfficeId"] = new SelectList(_context.SalesOffice, "Id", "Name");
 
             //Validation for Date of Listing to be not a future date
             var ListYear = Dwelling.DateOfListing.Year;
-            var AllowedYear = DateTime.Now.Year;
-            if (AllowedYear < ListYear)
-            {
-                ModelState.AddModelError("Dwelling.DateOfListing", "Date Of Listing cannot be a future year");
-            }
-            //Validation for Date of Listing to be not a past date
+            var CurrentYear = DateTime.Now.Year;
+            var ListMonth = Dwelling.DateOfListing.Month;
+            var CurrentMonth = DateTime.Now.Month;
+            var ListDay = Dwelling.DateOfListing.Day;
+            var CurrentDay = DateTime.Now.Day;
 
-            if (AllowedYear > ListYear)
+            if (CurrentYear < ListYear)
             {
-                ModelState.AddModelError("Dwelling.DateOfListing", "Date Of Listing cannot be a past year");
+                ModelState.AddModelError("Dwelling.DateOfListing", "Date Of Listing cannot be in future");
+            }
+            if (CurrentYear == ListYear && CurrentMonth < ListMonth)
+            {
+                ModelState.AddModelError("Dwelling.DateOfListing", "Date Of Listing cannot be in future");
+
+            }
+            if (CurrentYear == ListYear && CurrentMonth == ListMonth && CurrentDay < ListDay)
+            {
+                ModelState.AddModelError("Dwelling.DateOfListing", "Date Of Listing cannot be in future");
+
+            }
+            //Validation for Date of Listing cannot be past a year
+
+            if (CurrentYear > ListYear)
+            {
+                if (CurrentMonth > ListMonth)
+                {
+                    ModelState.AddModelError("Dwelling.DateOfListing", "Date Of Listing cannot be past a year");
+                }
+                if (CurrentMonth == ListMonth && CurrentDay > ListDay)
+                {
+                    ModelState.AddModelError("Dwelling.DateOfListing", "Date Of Listing cannot be past a year");
+                }
+
             }
 
             //Validation for Listed Price to not be less than $1000
 
-            decimal Price = Dwelling.ExpectedPrice.Value;
+            //decimal Price = Dwelling.ExpectedPrice.Value;
 
-            if (Price < 1000)
+            //if (Price < 1000)
             {
-                ModelState.AddModelError("Dwelling.ExpectedPrice", "Price of Listed Property cannot be less than $1000");
+               // ModelState.AddModelError("Dwelling.ExpectedPrice", "Price of Listed Property cannot be less than $1000");
             }
 
             if (!ModelState.IsValid)

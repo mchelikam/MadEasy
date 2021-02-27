@@ -20,16 +20,16 @@ namespace MadEasy.Models
         public string Address { get; set; }
         public Agent Agent { get; set; }
 
-        [Display(Name = "Agent Id")]
+        [Display(Name = "Agent Name")]
         public int AgentId { get; set; }
         public City City { get; set; }
 
-        [Display(Name = "City Id")]
+        [Display(Name = "City")]
         public int CityId { get; set; }
         [Display(Name = "Sales Office")]
         public SalesOffice SalesOffice { get; set; }
 
-        [Display(Name = "Sales Office Id")]
+        [Display(Name = "Sales Office")]
         public int SalesOfficeId { get; set; }
 
         [Display(Name = "Type Of Listing")]
@@ -84,7 +84,7 @@ namespace MadEasy.Models
                 int calculated_year = current_year
                                          - listed_year;
 
-                string old = $"{calculated_year} years, {calculated_month} months, {calculated_date} days";
+                string old = $"{calculated_month} months, {calculated_date} days";
                 return old;
             }
         }

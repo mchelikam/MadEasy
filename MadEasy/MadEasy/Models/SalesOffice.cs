@@ -10,11 +10,13 @@ namespace MadEasy.Models
     public class SalesOffice
     {
         public int Id { get; set; }
+
+        [Required(ErrorMessage = "Name is required.")]
         public string Name { get; set; }
         public List<Agent> Agents { get; set; }
         public City City { get; set; }
 
-        [Display(Name = "City Id")]
+        [Display(Name = "City")]
         public int CityId { get; set; }
         public List<Dwelling> Dwellings { get; set; }
         public string Address { get; set; }

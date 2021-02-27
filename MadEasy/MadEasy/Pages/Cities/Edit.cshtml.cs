@@ -47,7 +47,20 @@ namespace MadEasy.Pages.Cities
             {
                 return Page();
             }
+            // City Name Validation
+            var n = City.Name;
+            var currentId = City.Id;
+            bool nAlreadyExists = await _context.City.AnyAsync(x => x.Name == n && x.Id != currentId);
 
+            if (nAlreadyExists)
+            {
+                ModelState.AddModelError("City.Name", "City Name already exists");
+            }
+
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
             _context.Attach(City).State = EntityState.Modified;
 
             try

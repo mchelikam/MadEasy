@@ -50,6 +50,24 @@ namespace MadEasy.Pages.SalesOffices
                 return Page();
             }
 
+            // REPOPULATE DROPDOWN IF VALIDATION ERROR OCCURS
+            ViewData["CityId"] = new SelectList(_context.City, "Id", "Name");
+
+            // SalesOffice email validation
+            var e = SalesOffice.Email;
+            var currentId = SalesOffice.Id;
+            bool eAlreadyExists = await _context.SalesOffice.AnyAsync(x => x.Email == e && x.Id != currentId);
+
+            if (eAlreadyExists)
+            {
+                ModelState.AddModelError("SalesOffice.Email", "Email already exists");
+            }
+
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
+
             _context.Attach(SalesOffice).State = EntityState.Modified;
 
             try

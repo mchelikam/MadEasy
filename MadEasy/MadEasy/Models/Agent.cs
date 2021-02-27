@@ -21,6 +21,7 @@ namespace MadEasy.Models
         [StringLength(20, MinimumLength = 3, ErrorMessage = "Last Name should be a minimum of 3 characters")]
         public string LastName { get; set; }
 
+        [Display(Name = "Full Name")]
         public string FullName
         {
             get
@@ -41,7 +42,7 @@ namespace MadEasy.Models
         public List<Dwelling> Dwellings { get; set; }
         [Display(Name = "Sales Office")]
         public SalesOffice SalesOffice { get; set; }
-        [Display(Name = "Sales Office Id")]
+        [Display(Name = "Sales Office")]
         public int SalesOfficeId { get; set; }
     }
 }
